@@ -3,13 +3,14 @@ name: Scheduler
 # https://help.github.com/en/github/automating-your-workflow-with-github-actions/events-that-trigger-workflows#scheduled-events-schedule
 on:
   schedule:
-    - cron:  '*/3 * * * *'
+    - cron:  '*/2 * * * *'
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v2
     - name: reminder
       run: python reminder.py
       env:
