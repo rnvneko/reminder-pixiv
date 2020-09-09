@@ -12,3 +12,5 @@ jobs:
     steps:
     - name: reminder
       run: python reminder.py
+      env:
+        URL: ${{ secrets.URL }}
